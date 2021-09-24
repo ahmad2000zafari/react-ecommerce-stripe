@@ -1,6 +1,4 @@
 import React from "react";
-//import basketIcon from "../../assets/shopping_basket_icon.png";
-//import addBasket from "../../assets/cart_basket_add_icon.png";
 import addBasket from "../../assets/add_basket_icon.png";
 
 const Product = ({ product, onAddToCart }) => {

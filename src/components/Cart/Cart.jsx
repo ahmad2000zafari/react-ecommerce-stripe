@@ -20,15 +20,16 @@ const Cart = ({ cart, onUpdateCartQty, onRemoveFromCart, onEmptyCart }) => {
     </div>
   );
 
-  if (!cart.line_items) return "Loading";
+  if (!cart.line_items)
+    return (
+      <div className="flex flex-col justify-between items-center text-2xl mt-24">
+        <h1>Loading</h1>
+      </div>
+    );
 
   const renderCart = () => (
     <>
-      <div
-        className={
-          "grid grid-cols-1 lg:grid-cols-2 gap-y-10 gap-x-10 justify-items-center mb-20"
-        }
-      >
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-10 gap-x-10 justify-items-center mb-20">
         {cart.line_items.map((lineItem) => (
           <div key={lineItem.id} className="w-60">
             <CartItem

@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory } from "react-router-dom";
-import { useForm, FormProvider } from "react-hook-form";
+import { useHistory } from "react-router-dom";
 import { commerce } from "../../lib/commerce";
 
 const AddressForm = ({ checkoutToken, test }) => {
-  const methods = useForm();
-  const history = useHistory();
-
   const [shippingCountries, setShippingCountries] = useState([]);
   const [shippingCountry, setShippingCountry] = useState("");
   const [shippingSubdivisions, setShippingSubdivisions] = useState([]);
@@ -20,6 +16,7 @@ const AddressForm = ({ checkoutToken, test }) => {
   const [city, setCity] = useState("");
   const [email, setEmail] = useState("");
   const [zipCode, setZipCode] = useState("");
+  const history = useHistory();
 
   const shippingData = {
     firstName: firstName,
@@ -33,16 +30,11 @@ const AddressForm = ({ checkoutToken, test }) => {
     shippingOption: shippingOption,
   };
 
-  console.log(checkoutToken);
-
   const fetchShippingCountries = async (checkoutTokenId) => {
     const { countries } = await commerce.services.localeListShippingCountries(
       checkoutTokenId
     );
-
-    console.log(countries);
     setShippingCountries(countries);
-    console.log(shippingCountries);
     setShippingCountry(Object.keys(countries)[0]);
   };
 
@@ -50,7 +42,6 @@ const AddressForm = ({ checkoutToken, test }) => {
     const { subdivisions } = await commerce.services.localeListSubdivisions(
       countryCode
     );
-
     setShippingSubdivisions(subdivisions);
     setShippingSubdivision(Object.keys(subdivisions)[0]);
   };
@@ -64,11 +55,9 @@ const AddressForm = ({ checkoutToken, test }) => {
       checkoutTokenId,
       { country, region: stateProvince }
     );
-
     setShippingOptions(options);
     setShippingOption(options[0].id);
   };
-  console.log(shippingOptions);
 
   useEffect(() => {
     fetchShippingCountries(checkoutToken.id);
@@ -92,6 +81,7 @@ const AddressForm = ({ checkoutToken, test }) => {
     test(shippingData);
     history.push("/payment");
   };
+
   return (
     <div className="flex flex-col items-center justify-between m-2 font-bold">
       <form
