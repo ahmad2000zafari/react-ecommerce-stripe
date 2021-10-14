@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { commerce } from "./lib/commerce";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import Navbar from "./components/Navbar/Navbar";
 import Products from "./components/Products/Products";
@@ -16,12 +16,9 @@ function App() {
   const [shippingData, setShippingData] = useState(null);
   const [orderData, setOrderData] = useState({});
   const [errorMessage, setErrorMessage] = useState("");
-  const history = useHistory();
 
   const test = (data) => {
     setShippingData(data);
-    console.log(shippingData);
-    console.log("it is working");
   };
   const orderDataNullHandler = () => {
     setOrderData({});

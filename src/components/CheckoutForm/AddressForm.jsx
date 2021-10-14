@@ -83,7 +83,7 @@ const AddressForm = ({ checkoutToken, test }) => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-between m-2 font-bold">
+    <div className="flex flex-col items-center justify-between m-x2 my-10 font-bold">
       <form
         className="w-56 sm:w-auto flex flex-col items-center border pt-5"
         onSubmit={onsubmit}

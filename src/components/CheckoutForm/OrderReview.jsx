@@ -16,8 +16,8 @@ const OrderReview = ({ cart, checkoutToken }) => (
               alt={item.name}
             />
             <h1 className="w-24">{item.name}</h1>
-            <h1 className="pr-1">{item.quantity}</h1>
-            <h1>{item.line_total.formatted_with_symbol}</h1>
+            <h1 className="w-4">{item.quantity}</h1>
+            <h1 className="w-12">{item.line_total.formatted_with_symbol}</h1>
           </div>
         </div>
       ))}

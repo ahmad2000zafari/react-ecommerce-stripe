@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useHistory } from "react-router";
 import {
   Elements,
@@ -75,7 +75,8 @@ const Payment = ({ checkoutToken, shippingData, onCaptureCheckout, cart }) => {
               <div className="flex flex-col justify-between items-center">
                 <div className=" flex flex-col justify-beween items-center text-center border rounded text-xs font-semibold w-60 mb-1">
                   <h1>The web is in test mode.</h1>
-                  <h1>Test card number 4242 4242 4242 4242.</h1>
+                  <h1>Test card number is 4242 4242 4242 4242.</h1>
+                  <h1>Check your email after payment!</h1>
                 </div>
               </div>
               <div className=" flex flex-col border mb-5 mx-2 sm:mx-auto px-3 py-2 sm:w-160 rounded">

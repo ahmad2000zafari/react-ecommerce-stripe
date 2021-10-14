@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import CartItem from "./CartItem";
 
 const Cart = ({ cart, onUpdateCartQty, onRemoveFromCart, onEmptyCart }) => {
-  const numOfItems = cart.total_items;
   const handleEmptyCart = () => onEmptyCart();
 
   const renderEmptyCart = () => (

@@ -11,7 +11,7 @@ const Product = ({ product, onAddToCart }) => {
         />
       </div>
       <div className="w-60 h-64 flex flex-col justify-between items-center sm:mx-6">
-        <div className="flex flex-col justify-between items-center w-full h-1/3 px-3 pt-4 text-lg font-semibold text-gray-700 ">
+        <div className="flex flex-col justify-between items-center w-full h-1/3 px-3 pt-4 text-lg font-semibold text-gray-700">
           <h1>{product.name}</h1>
           <h1>{product.price.formatted_with_symbol}</h1>
         </div>
